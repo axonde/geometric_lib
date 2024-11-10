@@ -1,6 +1,6 @@
 def area(a, b, c):
     '''
-    Return area of a triangle by three sides (BROKEN!!!)
+    Return area of a triangle by three sides
 
         Args:
             a (int): first side
@@ -11,7 +11,8 @@ def area(a, b, c):
             area (float): area of the given triangle
     '''
 
-    return (a + b + c) / 2
+    p = (a + b + c) / 2
+    return (p * (p - a) * (p - b) * (p - c))**0.5
 
 
 def perimeter(a, b, c):

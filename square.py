@@ -1,4 +1,3 @@
-
 def area(a):
     '''Get (int) number and return his square (formula for square area).'''
 
