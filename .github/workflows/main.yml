@@ -1,0 +1,29 @@
+name: Testing Geometric Lib
+on:
+  push:
+    branches: [master, release]
+  pull_request:
+    branches: [master, release, develop]
+  schedule:
+    - cron: '5 * * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print username
+        run: "Username: ${{ github.repository_owner }}"
+      - name: Print FCs and group number
+        run: "${{ FCs }} ${{ $Group }}"
+        env:
+          FCs: Шпак Александр Юрьевич
+          Group: М3111
+      - uses: actions/checkout@v4
+      - name: Setup Python version
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run tests
+        run: python -m unittest discover -s tests
+      - uses: py-actions/flake8@v2
+      
