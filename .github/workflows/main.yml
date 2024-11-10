@@ -15,7 +15,7 @@ jobs:
         env:
           FCs: Шпак Александр Юрьевич
           Group: М3111
-        run: "${{ FCs }} ${{ Group }}"
+        run: "echo $FCs $Group"
       - uses: actions/checkout@v4
       - name: Setup Python version
         uses: actions/setup-python@v5
