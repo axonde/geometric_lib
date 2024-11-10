@@ -1,0 +1,28 @@
+name: Testing Geometric Lib
+on:
+  push:
+    branches: [main, release]
+  pull_request:
+    branches: [main, release, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print username
+        run: "echo Username: ${{ github.repository_owner }}"
+      - name: Print FCs and group number
+        env:
+          FCs: Шпак Александр Юрьевич
+          Group: М3111
+        run: "echo $FCs $Group"
+      - uses: actions/checkout@v4
+      - name: Setup Python version
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run tests
+        run: if [ -d "tests" ]; then python -m unittest discover -s tests; else echo "No tests directory found, skipping tests."; fi
+
+      - uses: py-actions/flake8@v2
+      
