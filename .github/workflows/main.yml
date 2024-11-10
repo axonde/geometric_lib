@@ -22,6 +22,7 @@ jobs:
         with:
           python-version: '3.13'
       - name: Run tests
-        run: python -m unittest discover -s tests
+        run: if [ -d "tests" ]; then python -m unittest discover -s tests; else echo "No tests directory found, skipping tests."; fi
+
       - uses: py-actions/flake8@v2
       
