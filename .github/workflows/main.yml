@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print username
-        run: "Username: ${{ github.repository_owner }}"
+        run: "echo Username: ${{ github.repository_owner }}"
       - name: Print FCs and group number
         env:
           FCs: Шпак Александр Юрьевич
