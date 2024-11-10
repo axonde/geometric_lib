@@ -1,6 +1,7 @@
 from unittest import TestCase, main
 from calculate import calc
 
+
 class TestCalculator(TestCase):
     def test_correct_figure_func_value(self):
         figure = "circle"

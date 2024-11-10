@@ -3,6 +3,7 @@ import circle
 import square
 import triangle
 
+
 class TestGeometry(TestCase):
     def test_circle_area(self):
         # arrange
@@ -26,7 +27,7 @@ class TestGeometry(TestCase):
         side = 11
         result = square.perimeter(side)
         self.assertEqual(result, 44)
-    
+
     def test_triangle_area(self):
         sides = [3, 4, 5]
         result = triangle.area(*sides)
@@ -36,6 +37,7 @@ class TestGeometry(TestCase):
         sides = [5, 9, 1]
         result = triangle.perimeter(*sides)
         self.assertEqual(result, 15)
+
 
 if __name__ == '__main__':
     main()
