@@ -1,11 +1,9 @@
 name: Testing Geometric Lib
 on:
   push:
-    branches: [master, release]
+    branches: [main, release]
   pull_request:
-    branches: [master, release, develop]
-  schedule:
-    - cron: '5 * * * *'
+    branches: [main, release, develop]
 
 jobs:
   test:
@@ -14,7 +12,7 @@ jobs:
       - name: Print username
         run: "Username: ${{ github.repository_owner }}"
       - name: Print FCs and group number
-        run: "${{ FCs }} ${{ $Group }}"
+        run: "${{ FCs }} ${{ Group }}"
         env:
           FCs: Шпак Александр Юрьевич
           Group: М3111
