@@ -3,7 +3,7 @@ on:
   push:
     branches: [master, release]
   pull_request:
-    branches: [master, release, develop, tests]
+    branches: [master, release, develop]
   schedule:
     - cron: '5 * * * *'
 
