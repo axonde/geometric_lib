@@ -12,10 +12,10 @@ jobs:
       - name: Print username
         run: "Username: ${{ github.repository_owner }}"
       - name: Print FCs and group number
-        run: "${{ FCs }} ${{ Group }}"
         env:
           FCs: Шпак Александр Юрьевич
           Group: М3111
+        run: "${{ FCs }} ${{ Group }}"
       - uses: actions/checkout@v4
       - name: Setup Python version
         uses: actions/setup-python@v5
